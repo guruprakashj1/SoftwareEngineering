@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INVEST Criteria for User Stories</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #2ecc71;
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--bg-color);
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        .introduction {
+            background-color: #ebf5fb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .criteria-card {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .criteria-header {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 15px 20px;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        .criteria-content {
+            padding: 20px;
+        }
+
+        .example-container {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 4px;
+        }
+
+        .checklist {
+            background-color: #e8f6f3;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 15px;
+        }
+
+        .anti-pattern {
+            background-color: #fdedec;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 15px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .pro-tip {
+            background-color: #fff3e0;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 15px;
+            border-left: 4px solid #f39c12;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>INVEST Criteria for User Stories</h1>
+
+        <div class="introduction">
+            <h2>Understanding User Stories</h2>
+            <p>User stories are a fundamental unit of work in agile methodologies, capturing functionality from the end user's perspective. The INVEST criteria provide a framework for creating high-quality user stories that drive effective development and deliver value to users.</p>
+        </div>
+
+        <!-- Independent -->
+        <div class="criteria-card">
+            <div class="criteria-header">I - Independent</div>
+            <div class="criteria-content">
+                <p>User stories should be self-contained and independent of other stories. This independence allows for flexible prioritization and implementation without complex dependencies.</p>
+                
+                <div class="example-container">
+                    <h3>Good Example</h3>
+                    <p>"As a user, I want to create an account with email verification."</p>
+                    <p>"As a user, I want to reset my password using email confirmation."</p>
+                    <p>These stories can be implemented in any order as they're independent of each other.</p>
+                </div>
+
+                <div class="anti-pattern">
+                    <h3>Anti-Pattern</h3>
+                    <p>"As a user, I want to add items to my shopping cart."</p>
+                    <p>"As a user, I want to view items in my shopping cart."</p>
+                    <p>The second story depends on the first, creating an unnecessary dependency.</p>
+                </div>
+
+                <div class="pro-tip">
+                    <h3>Pro Tip</h3>
+                    <p>When dependencies are unavoidable, consider combining related stories or breaking them down differently to maintain independence.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Negotiable -->
+        <div class="criteria-card">
+            <div class="criteria-header">N - Negotiable</div>
+            <div class="criteria-content">
+                <p>User stories should be flexible and open to discussion. They capture the essence of the requirement without prescribing a specific solution, allowing for collaboration and refinement.</p>
+                
+                <div class="example-container">
+                    <h3>Good Example</h3>
+                    <p>"As a user, I want to be notified of important account activities."</p>
+                    <p>This leaves room for discussion about notification methods and what constitutes "important."</p>
+                </div>
+
+                <div class="anti-pattern">
+                    <h3>Anti-Pattern</h3>
+                    <p>"As a user, I want to receive SMS and email notifications with specific formatting using template XYZ when any account change occurs."</p>
+                    <p>This is too prescriptive and leaves no room for discussion or alternatives.</p>
+                </div>
+
+                <div class="pro-tip">
+                    <h3>Pro Tip</h3>
+                    <p>Keep implementation details in acceptance criteria rather than the story itself, allowing for flexibility in the solution approach.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Valuable -->
+        <div class="criteria-card">
+            <div class="criteria-header">V - Valuable</div>
+            <div class="criteria-content">
+                <p>Each user story must deliver clear value to the end user or stakeholder. The value should be evident and align with business objectives.</p>
+                
+                <div class="example-container">
+                    <h3>Good Example</h3>
+                    <p>"As a marketing manager, I want to see conversion rates by campaign so that I can optimize marketing spend."</p>
+                    <p>Clear business value: improved marketing efficiency and ROI.</p>
+                </div>
+
+                <div class="anti-pattern">
+                    <h3>Anti-Pattern</h3>
+                    <p>"As a developer, I want to refactor the authentication module using the latest framework."</p>
+                    <p>Technical task without clear user value should be part of technical debt management.</p>
+                </div>
+
+                <div class="pro-tip">
+                    <h3>Pro Tip</h3>
+                    <p>Always include "so that..." to explicitly state the value proposition of the story.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Estimable -->
+        <div class="criteria-card">
+            <div class="criteria-header">E - Estimable</div>
+            <div class="criteria-content">
+                <p>Development teams should be able to estimate the effort required to implement the story. This requires sufficient detail and understanding.</p>
+                
+                <div class="example-container">
+                    <h3>Good Example</h3>
+                    <p>"As a user, I want to filter products by category, price range, and availability."</p>
+                    <p>Clear scope with specific filter criteria makes estimation possible.</p>
+                </div>
+
+                <div class="anti-pattern">
+                    <h3>Anti-Pattern</h3>
+                    <p>"As a user, I want the application to be fast."</p>
+                    <p>Too vague to estimate meaningfully.</p>
+                </div>
+
+                <div class="pro-tip">
+                    <h3>Pro Tip</h3>
+                    <p>Include acceptance criteria that help bound the scope and clarify expectations.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Small -->
+        <div class="criteria-card">
+            <div class="criteria-header">S - Small</div>
+            <div class="criteria-content">
+                <p>Stories should be small enough to be completed within a single sprint. Smaller stories reduce risk and enable better planning and tracking.</p>
+                
+                <div class="example-container">
+                    <h3>Good Example</h3>
+                    <p>"As a user, I want to update my profile picture."</p>
+                    <p>Focused scope that can be completed quickly.</p>
+                </div>
+
+                <div class="anti-pattern">
+                    <h3>Anti-Pattern</h3>
+                    <p>"As a user, I want a complete social networking feature set."</p>
+                    <p>Too large and should be broken down into smaller stories.</p>
+                </div>
+
+                <div class="pro-tip">
+                    <h3>Pro Tip</h3>
+                    <p>If a story takes more than a few days, consider breaking it down into smaller, valuable increments.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testable -->
+        <div class="criteria-card">
+            <div class="criteria-header">T - Testable</div>
+            <div class="criteria-content">
+                <p>Stories must be written so that they can be tested to verify completion. Clear acceptance criteria enable effective testing.</p>
+                
+                <div class="example-container">
+                    <h3>Good Example</h3>
+                    <p>"As a user, I want to search for products by name, receiving results within 2 seconds for up to 1000 items."</p>
+                    <p>Contains specific, testable criteria.</p>
+                </div>
+
+                <div class="anti-pattern">
+                    <h3>Anti-Pattern</h3>
+                    <p>"As a user, I want the system to be user-friendly."</p>
+                    <p>Subjective and not testable without specific criteria.</p>
+                </div>
+
+                <div class="pro-tip">
+                    <h3>Pro Tip</h3>
+                    <p>Include specific, measurable acceptance criteria that can be verified through automated or manual testing.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist">
+            <h2>INVEST Criteria Checklist</h2>
+            <p>When reviewing user stories, ensure they meet these requirements:</p>
+            <ul>
+                <li>Independent: Can be developed in any order</li>
+                <li>Negotiable: Allows for discussion and refinement</li>
+                <li>Valuable: Delivers clear value to users or stakeholders</li>
+                <li>Estimable: Team can assess the effort required</li>
+                <li>Small: Completable within one sprint</li>
+                <li>Testable: Has clear acceptance criteria</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
