@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDLC Roles and Responsibilities</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --success-color: #2ecc71;
+            --warning-color: #f1c40f;
+            --info-color: #9b59b6;
+            --light-bg: #f5f5f5;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--light-bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--secondary-color);
+            margin-bottom: 40px;
+        }
+
+        .role-card {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .role-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .role-header {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 15px 20px;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        .role-content {
+            padding: 20px;
+        }
+
+        .responsibilities {
+            margin-top: 15px;
+        }
+
+        .phase-involvement {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+
+        .skills-required {
+            background-color: #e8f6f3;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+
+        .quick-links {
+            position: sticky;
+            top: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .quick-links ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .quick-links li {
+            margin-bottom: 10px;
+        }
+
+        .quick-links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .quick-links a:hover {
+            text-decoration: underline;
+        }
+
+        .interaction-matrix {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .interaction-matrix th,
+        .interaction-matrix td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .interaction-matrix th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SDLC Roles and Responsibilities</h1>
+
+        <div class="quick-links">           
+                <a href="#product-owner">Product Owner</a></li>
+                <a href="#project-manager">Project Manager</a></li>
+                <a href="#business-analyst">Business Analyst</a></li>
+                <a href="#solution-architect">Solution Architect</a></li>
+                <a href="#tech-lead">Technical Lead</a></li>
+                <a href="#developers">Developers</a></li>
+                <a href="#qa-team">QA Team</a></li>
+                <a href="#devops">DevOps Engineer</a></li>
+                <a href="#ux-designer">UX Designer</a></li>
+        </div>
+
+        <!-- Product Owner -->
+        <div id="product-owner" class="role-card">
+            <div class="role-header">Product Owner</div>
+            <div class="role-content">
+                <p><strong>Description:</strong> The Product Owner represents stakeholders and is the voice of the customer. They are responsible for maximizing the value of the product.</p>
+                
+                <div class="responsibilities">
+                    <h3>Key Responsibilities:</h3>
+                    <ul>
+                        <li>Define product vision and strategy</li>
+                        <li>Manage product backlog</li>
+                        <li>Prioritize features and requirements</li>
+                        <li>Accept or reject work results</li>
+                        <li>Collaborate with stakeholders</li>
+                    </ul>
+                </div>
+
+                <div class="phase-involvement">
+                    <h3>SDLC Phase Involvement:</h3>
+                    <ul>
+                        <li>Requirements Gathering</li>
+                        <li>Planning</li>
+                        <li>Review & Acceptance</li>
+                        <li>Product Release</li>
+                    </ul>
+                </div>
+
+                <div class="skills-required">
+                    <h3>Required Skills:</h3>
+                    <ul>
+                        <li>Strong business acumen</li>
+                        <li>Decision-making ability</li>
+                        <li>Stakeholder management</li>
+                        <li>Communication skills</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Manager -->
+        <div id="project-manager" class="role-card">
+            <div class="role-header">Project Manager</div>
+            <div class="role-content">
+                <p><strong>Description:</strong> The Project Manager is responsible for planning, executing, and closing projects while ensuring they're delivered on time and within budget.</p>
+                
+                <div class="responsibilities">
+                    <h3>Key Responsibilities:</h3>
+                    <ul>
+                        <li>Project planning and scheduling</li>
+                        <li>Resource allocation</li>
+                        <li>Risk management</li>
+                        <li>Team coordination</li>
+                        <li>Status reporting to stakeholders</li>
+                    </ul>
+                </div>
+
+                <div class="phase-involvement">
+                    <h3>SDLC Phase Involvement:</h3>
+                    <ul>
+                        <li>All phases - Project oversight</li>
+                        <li>Planning</li>
+                        <li>Monitoring & Control</li>
+                        <li>Closing</li>
+                    </ul>
+                </div>
+
+                <div class="skills-required">
+                    <h3>Required Skills:</h3>
+                    <ul>
+                        <li>Project management methodologies</li>
+                        <li>Leadership skills</li>
+                        <li>Risk management</li>
+                        <li>Budgeting and resource management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Business Analyst -->
+        <div id="business-analyst" class="role-card">
+            <div class="role-header">Business Analyst</div>
+            <div class="role-content">
+                <p><strong>Description:</strong> The Business Analyst bridges the gap between stakeholders and the development team by analyzing business needs and translating them into requirements.</p>
+                
+                <div class="responsibilities">
+                    <h3>Key Responsibilities:</h3>
+                    <ul>
+                        <li>Requirements gathering and analysis</li>
+                        <li>Documentation of business processes</li>
+                        <li>User story creation</li>
+                        <li>Process improvement recommendations</li>
+                        <li>Stakeholder communication</li>
+                    </ul>
+                </div>
+
+                <div class="phase-involvement">
+                    <h3>SDLC Phase Involvement:</h3>
+                    <ul>
+                        <li>Requirements Analysis</li>
+                        <li>Design</li>
+                        <li>Testing</li>
+                        <li>Implementation</li>
+                    </ul>
+                </div>
+
+                <div class="skills-required">
+                    <h3>Required Skills:</h3>
+                    <ul>
+                        <li>Business process modeling</li>
+                        <li>Requirements analysis techniques</li>
+                        <li>Documentation skills</li>
+                        <li>Analytical thinking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Solution Architect -->
+        <div id="solution-architect" class="role-card">
+            <div class="role-header">Solution Architect</div>
+            <div class="role-content">
+                <p><strong>Description:</strong> The Solution Architect designs the overall technical solution that meets business requirements while considering technical constraints and best practices.</p>
+                
+                <div class="responsibilities">
+                    <h3>Key Responsibilities:</h3>
+                    <ul>
+                        <li>Design system architecture</li>
+                        <li>Technology stack selection</li>
+                        <li>Technical standards definition</li>
+                        <li>Architecture documentation</li>
+                        <li>Technical risk assessment</li>
+                    </ul>
+                </div>
+
+                <div class="phase-involvement">
+                    <h3>SDLC Phase Involvement:</h3>
+                    <ul>
+                        <li>Architecture Planning</li>
+                        <li>Design</li>
+                        <li>Technical Oversight</li>
+                        <li>Quality Assurance</li>
+                    </ul>
+                </div>
+
+                <div class="skills-required">
+                    <h3>Required Skills:</h3>
+                    <ul>
+                        <li>Deep technical knowledge</li>
+                        <li>Architecture patterns</li>
+                        <li>Technology evaluation</li>
+                        <li>System integration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Lead -->
+        <div id="tech-lead" class="role-card">
+            <div class="role-header">Technical Lead</div>
+            <div class="role-content">
+                <p><strong>Description:</strong> The Technical Lead provides technical guidance to the development team and ensures technical excellence in implementation.</p>
+                
+                <div class="responsibilities">
+                    <h3>Key Responsibilities:</h3>
+                    <ul>
+                        <li>Technical decision making</li>
+                        <li>Code review management</li>
+                        <li>Technical mentoring</li>
+                        <li>Implementation oversight</li>
+                        <li>Technical debt management</li>
+                    </ul>
+                </div>
+
+                <div class="phase-involvement">
+                    <h3>SDLC Phase Involvement:</h3>
+                    <ul>
+                        <li>Technical Design</li>
+                        <li>Development</li>
+                        <li>Code Review</li>
+                        <li>Technical Support</li>
+                    </ul>
+                </div>
+
+                <div class="skills-required">
+                    <h3>Required Skills:</h3>
+                    <ul>
+                        <li>Advanced programming skills</li>
+                        <li>Technical leadership</li>
+                        <li>Problem-solving</li>
+                        <li>Mentoring ability</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Developers -->
+        <div id="developers" class="role-card">
+            <div class="role-header">Developers</div>
+            <div class="role-content">
+                <p><strong>Description:</strong> Developers are responsible for writing, testing, and maintaining code that implements the required functionality.</p>
+                
+                <div class="responsibilities">
+                    <h3>Key Responsibilities:</h3>
+                    <ul>
+                        <li>Code implementation</li>
+                        <li>Unit testing</li>
+                        <li>Code documentation</li>
+                        <li>Bug fixing</li>
+                        <li>Code optimization</li>
+                    </ul>
+                </div>
+
+                <div class="phase-involvement">
+                    <h3>SDLC Phase Involvement:</h3>
+                    <ul>
+                        <li>Development</li>
+                        <li>Unit Testing</li>
+                        <li>Debugging</li>
+                        <li>Maintenance</li>
+                    </ul>
+                </div>
+
+                <div class="skills-required">
+                    <h3>Required Skills:</h3>
+                    <ul>
+                        <li>Programming languages</li>
+                        <li>Problem-solving</li>
+                        <li>Testing frameworks</li>
+                        <li>Version control</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- QA Team -->
+        <div id="qa-team" class="role-card">
+            <div class="role-header">QA Team</div>
+            <div class="role-content">
+                <p><strong>Description:</strong> The QA Team ensures software quality through comprehensive testing and quality assurance processes.</p>
+                
+                <div class="responsibilities">
+                    <h3>Key Responsibilities:</h3>
+                    <ul>
+                        <li>Test planning</li>
+                        <li>Test case development</li>
+                        <li>Test execution</li>
+                        <li>Bug reporting</li>
+                        <li>Quality metrics tracking</li>
+                    </ul>
+                </div>
+
+                <div class="phase-involvement">
+                    <h3>SDLC Phase Involvement:</h3>
+                    <ul>
+                        <li>Testing</li>
+                        <li>Quality Assurance</li>
+                        <li>UAT Support</li>
+                        <li>Release Testing</li>
+                    </ul>
+                </div>
+
+                <div class="skills-required">
+                    <h3>Required Skills:</h3>
+                    <ul>
+                        <li>Testing methodologies</li>
+                        <li>Test automation</li>
+                        <li>Bug tracking tools</li>
+                        <li>Quality metrics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- DevOps Engineer -->
+        <div id="devops" class="role-card">
+            <div class="role-header">DevOps Engineer</div>
+            <div class="role-content">
+                <p><strong>Description:</strong> DevOps Engineers bridge development and operations, ensuring smooth deployment and operation of software systems.</p>
+                
+                <div class="responsibilities">
+                    <h3>Key Responsibilities:</h3

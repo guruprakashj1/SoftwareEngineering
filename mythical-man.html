@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineering Lecture: Brooks' Law</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #2980b9;
+            margin-top: 30px;
+        }
+
+        h3 {
+            color: #34495e;
+        }
+
+        .learning-objectives {
+            background-color: #ebf5fb;
+            padding: 20px;
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+        }
+
+        .quote {
+            font-style: italic;
+            border-left: 4px solid #95a5a6;
+            padding-left: 20px;
+            margin: 20px 0;
+            color: #555;
+        }
+
+        .discussion-questions {
+            background-color: #eafaf1;
+            padding: 20px;
+            border-left: 4px solid #27ae60;
+            margin: 20px 0;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+        }
+
+        .additional-reading {
+            background-color: #fef9e7;
+            padding: 20px;
+            border-left: 4px solid #f1c40f;
+            margin: 20px 0;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #bdc3c7;
+            text-align: center;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Software Engineering Lecture</h1>
+        <h2>Topic: Brooks' Law and The Mythical Man-Month</h2>
+        <h3>Understanding Project Management in Software Development</h3>
+
+        <div class="learning-objectives">
+            <h3>Learning Objectives</h3>
+            <p>By the end of this lecture, students will:</p>
+            <ul>
+                <li>Understand Brooks' Law and its implications in software project management</li>
+                <li>Identify the limitations of linear resource scaling in software projects</li>
+                <li>Recognize the factors that affect project completion time</li>
+                <li>Learn practical considerations for team scaling</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2>1. Introduction to Brooks' Law</h2>
+            <p>Frederick P. Brooks, in his seminal 1975 essay "The Mythical Man-Month," introduced what became known as Brooks' Law:</p>
+            <div class="quote">
+                "Adding manpower to a late software project makes it later."
+            </div>
+            <p>This counterintuitive principle challenges the common assumption that more resources automatically lead to faster project completion.</p>
+        </section>
+
+        <section>
+            <h2>2. The False Analogy: Why Software Is Different</h2>
+            <h3>The Hole-Digging Fallacy</h3>
+            <p>Consider this common misconception:</p>
+            <ul>
+                <li>If 3 workers can dig a hole in 10 hours</li>
+                <li>Then 6 workers should dig it in 5 hours</li>
+            </ul>
+            <p>While this linear scaling works for simple, partitionable tasks like digging holes, software development is fundamentally different.</p>
+        </section>
+
+        <section>
+            <h2>3. Key Factors Affecting Project Scaling</h2>
+            
+            <h3>3.1 Project Development Stage</h3>
+            <ul>
+                <li>Early Stage: Additional resources might help if properly integrated</li>
+                <li>Late Stage: Adding resources typically causes more delays</li>
+                <li>The later the project, the more pronounced the negative effects</li>
+            </ul>
+
+            <h3>3.2 Project Complexity</h3>
+            <div class="quote">
+                "Men and months are interchangeable commodities only when a task can be partitioned among many workers with no communication among them."
+            </div>
+            <ul>
+                <li>Task divisibility</li>
+                <li>Interdependencies</li>
+                <li>Learning curve</li>
+                <li>System complexity</li>
+            </ul>
+
+            <h3>3.3 Communication Overhead</h3>
+            <ul>
+                <li>Communication channels increase exponentially with team size</li>
+                <li>For n people: n(n-1)/2 potential communication channels</li>
+                <li>Larger teams require more coordination</li>
+                <li>More meetings, emails, and documentation</li>
+                <li>Increased chance of miscommunication</li>
+            </ul>
+
+            <h3>3.4 Ramp-Up Time</h3>
+            <p>New team members require:</p>
+            <ul>
+                <li>Time to understand the project</li>
+                <li>Familiarization with codebase</li>
+                <li>Integration into team dynamics</li>
+                <li>Understanding of project context</li>
+                <li>During this period, they may actually reduce team productivity</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>4. The Theory vs. Practice Gap</h2>
+            
+            <h3>4.1 Theoretical Planning</h3>
+            <ul>
+                <li>Spreadsheet estimates</li>
+                <li>Linear resource allocation</li>
+                <li>Perfect productivity assumptions</li>
+            </ul>
+
+            <h3>4.2 Practical Reality</h3>
+            <ul>
+                <li>Human factors</li>
+                <li>Variable productivity</li>
+                <li>Environmental influences</li>
+                <li>Quality considerations</li>
+                <li>Team dynamics</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>5. Best Practices for Project Management</h2>
+            
+            <h3>5.1 Resource Allocation</h3>
+            <ul>
+                <li>Start with appropriate team size</li>
+                <li>Add resources early if needed</li>
+                <li>Focus on team efficiency over size</li>
+                <li>Consider breaking down project into independent components</li>
+            </ul>
+
+            <h3>5.2 Team Management</h3>
+            <ul>
+                <li>Maintain clear communication channels</li>
+                <li>Document effectively</li>
+                <li>Establish clear roles and responsibilities</li>
+                <li>Create onboarding processes</li>
+            </ul>
+
+            <h3>5.3 Project Planning</h3>
+            <ul>
+                <li>Account for ramp-up time</li>
+                <li>Build in buffer for communication overhead</li>
+                <li>Consider team dynamics</li>
+                <li>Plan for realistic productivity levels</li>
+            </ul>
+        </section>
+
+        <div class="discussion-questions">
+            <h2>Discussion Questions</h2>
+            <ol>
+                <li>How might Brooks' Law apply differently to modern development practices like agile methodologies?</li>
+                <li>What strategies could help minimize the negative effects of adding team members to a project?</li>
+                <li>How can project managers better estimate the true impact of adding new team members?</li>
+            </ol>
+        </div>
+
+        <div class="additional-reading">
+            <h2>Additional Reading</h2>
+            <ul>
+                <li>"The Mythical Man-Month" by Frederick P. Brooks</li>
+                <li>"Peopleware" by Tom DeMarco and Timothy Lister</li>
+                <li>"Rapid Development" by Steve McConnell</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>"In theory, theory and practice are the same. In practice, they are not."</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Process Model Selector</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #2ecc71;
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--bg-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 15px;
+        }
+
+        .question-container {
+            margin-bottom: 30px;
+        }
+
+        .question {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option:hover {
+            background-color: #e9ecef;
+        }
+
+        .option input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .option label {
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .analyze-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .analyze-btn:hover {
+            background-color: #2980b9;
+        }
+
+        .result-container {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+        }
+
+        .result-header {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .model-recommendation {
+            background-color: #e8f6f3;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .model-details {
+            margin-top: 15px;
+        }
+
+        .model-details ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Software Process Model Selector</h1>
+        
+        <div id="questionnaire">
+            <div class="question-container">
+                <div class="question">1. How well-defined are your project requirements?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="requirements" id="req1" value="well-defined">
+                        <label for="req1">Well-defined and unlikely to change</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="requirements" id="req2" value="somewhat-defined">
+                        <label for="req2">Partially defined with some expected changes</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="requirements" id="req3" value="evolving">
+                        <label for="req3">Evolving and likely to change frequently</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <div class="question">2. What is the size and complexity of your project?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="size" id="size1" value="small">
+                        <label for="size1">Small and simple</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="size" id="size2" value="medium">
+                        <label for="size2">Medium with moderate complexity</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="size" id="size3" value="large">
+                        <label for="size3">Large and complex</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <div class="question">3. How much customer involvement is possible?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="involvement" id="inv1" value="high">
+                        <label for="inv1">High involvement throughout the project</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="involvement" id="inv2" value="moderate">
+                        <label for="inv2">Moderate involvement at key points</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="involvement" id="inv3" value="low">
+                        <label for="inv3">Limited involvement</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <div class="question">4. What is your project timeline?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="timeline" id="time1" value="short">
+                        <label for="time1">Short - Need quick delivery</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="timeline" id="time2" value="moderate">
+                        <label for="time2">Moderate - Regular delivery cycles</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="timeline" id="time3" value="flexible">
+                        <label for="time3">Flexible - Quality is priority over time</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <div class="question">5. What is the risk level of your project?</div>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="risk" id="risk1" value="high">
+                        <label for="risk1">High risk - Critical system</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="risk" id="risk2" value="moderate">
+                        <label for="risk2">Moderate risk</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="risk" id="risk3" value="low">
+                        <label for="risk3">Low risk</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button class="analyze-btn" onclick="analyzeResponses()">Get Recommendation</button>
+            </div>
+        </div>
+
+        <div id="result" class="result-container">
+            <h2 class="result-header">Recommended Process Model</h2>
+            <div id="recommendation" class="model-recommendation"></div>
+            <div id="details" class="model-details"></div>
+        </div>
+    </div>
+
+    <script>
+        function analyzeResponses() {
+            const requirements = document.querySelector('input[name="requirements"]:checked')?.value;
+            const size = document.querySelector('input[name="size"]:checked')?.value;
+            const involvement = document.querySelector('input[name="involvement"]:checked')?.value;
+            const timeline = document.querySelector('input[name="timeline"]:checked')?.value;
+            const risk = document.querySelector('input[name="risk"]:checked')?.value;
+
+            if (!requirements || !size || !involvement || !timeline || !risk) {
+                alert('Please answer all questions to get a recommendation.');
+                return;
+            }
+
+            let recommendation = determineModel(requirements, size, involvement, timeline, risk);
+            displayResult(recommendation);
+        }
+
+        function determineModel(requirements, size, involvement, timeline, risk) {
+            // Logic to determine the best model based on responses
+            if (requirements === 'well-defined' && size === 'small' && risk === 'low') {
+                return {
+                    model: 'Waterfall Model',
+                    reasons: [
+                        'Well-defined requirements that are unlikely to change',
+                        'Small project size makes it manageable',
+                        'Low risk level suits sequential approach'
+                    ],
+                    considerations: [
+                        'Ensure requirements are truly stable',
+                        'Plan for thorough documentation',
+                        'Set clear phase completion criteria'
+                    ]
+                };
+            }
+
+            if (risk === 'high' && size === 'large') {
+                return {
+                    model: 'Spiral Model',
+                    reasons: [
+                        'High risk project requires risk analysis',
+                        'Large size benefits from incremental approach',
+                        'Allows for controlled evolution of the system'
+                    ],
+                    considerations: [
+                        'Invest in risk analysis expertise',
+                        'Plan for longer development cycles',
+                        'Budget for multiple prototypes'
+                    ]
+                };
+            }
+
+            if (requirements === 'evolving' && involvement === 'high') {
+                return {
+                    model: 'Agile (Scrum)',
+                    reasons: [
+                        'Suits evolving requirements',
+                        'High customer involvement enables frequent feedback',
+                        'Allows for quick adaptation to changes'
+                    ],
+                    considerations: [
+                        'Ensure team is trained in Agile practices',
+                        'Plan for regular sprint meetings',
+                        'Set up proper collaboration tools'
+                    ]
+                };
+            }
+
+            if (timeline === 'short' && size !== 'large') {
+                return {
+                    model: 'RAD (Rapid Application Development)',
+                    reasons: [
+                        'Suits projects with tight deadlines',
+                        'Works well for user interface-focused applications',
+                        'Enables quick prototype development'
+                    ],
+                    considerations: [
+                        'Ensure skilled developers are available',
+                        'Focus on essential features first',
+                        'Plan for intensive user involvement'
+                    ]
+                };
+            }
+
+            // Default to Incremental if no specific match
+            return {
+                model: 'Incremental Model',
+                reasons: [
+                    'Balanced approach for most project types',
+                    'Allows for gradual system development',
+                    'Provides flexibility while maintaining structure'
+                ],
+                considerations: [
+                    'Plan increments carefully',
+                    'Ensure proper integration between increments',
+                    'Maintain consistent architecture across increments'
+                ]
+            };
+        }
+
+        function displayResult(recommendation) {
+            const resultContainer = document.getElementById('result');
+            const recommendationDiv = document.getElementById('recommendation');
+            const detailsDiv = document.getElementById('details');
+
+            recommendationDiv.innerHTML = `
+                <h3>${recommendation.model}</h3>
+                <p>Based on your responses, we recommend using the ${recommendation.model}.</p>
+            `;
+
+            detailsDiv.innerHTML = `
+                <h4>Why this model?</h4>
+                <ul>
+                    ${recommendation.reasons.map(reason => `<li>${reason}</li>`).join('')}
+                </ul>
+                <h4>Key Considerations</h4>
+                <ul>
+                    ${recommendation.considerations.map(consideration => `<li>${consideration}</li>`).join('')}
+                </ul>
+            `;
+
+            resultContainer.style.display = 'block';
+            resultContainer.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

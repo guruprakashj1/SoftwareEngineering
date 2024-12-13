@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Software Engineering</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 1em;
+            padding-bottom: 0.5em;
+            border-bottom: 3px solid var(--secondary-color);
+        }
+
+        h2 {
+            font-size: 1.8em;
+            padding-bottom: 0.3em;
+            border-bottom: 2px solid #eee;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            color: var(--secondary-color);
+        }
+
+        .definition-box {
+            background-color: #ebf5fb;
+            border-left: 4px solid var(--secondary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .process-model {
+            background-color: #eafaf1;
+            border-left: 4px solid #27ae60;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        ol, ul {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .evolution-timeline {
+            background-color: #fef9e7;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+            border-left: 4px solid #f1c40f;
+        }
+
+        .key-point {
+            border-left: 4px solid var(--accent-color);
+            padding-left: 15px;
+            margin: 15px 0;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Introduction to Software Engineering</h1>
+
+        <section id="software-definition">
+            <h2>What is Software?</h2>
+            <div class="key-point">
+                <p>Software is a set of instructions, data structures, and associated documentation that directs a computer to perform specific tasks or operations.</p>
+            </div>
+            <p>Key components include:</p>
+            <ol>
+                <li>Computer programs containing instructions that provide desired functionality when executed</li>
+                <li>Data structures enabling programs to adequately store and manipulate information</li>
+                <li>Documentation describing how to use the software</li>
+            </ol>
+            <p>Software is developed or engineered rather than manufactured. It doesn't wear out but can deteriorate over time due to changing requirements and environments. Most software is custom-built, although there is a trend toward component-based development.</p>
+        </section>
+
+        <section id="software-engineering">
+            <h2>What is Software Engineering?</h2>
+            <div class="definition-box">
+                <h3>IEEE Definition</h3>
+                <ol>
+                    <li>"The application of a systematic, disciplined, quantifiable approach to the development, operation, and maintenance of software; that is, the application of engineering to software."</li>
+                    <li>"The study of approaches as in (1)."</li>
+                </ol>
+            </div>
+            <p>Software engineering is a systematic, disciplined approach to developing software. It applies engineering principles and methods to create high-quality, reliable, and maintainable software solutions in a cost-effective manner.</p>
+        </section>
+
+        <section id="sdlc">
+            <h2>Software Development Life Cycle (SDLC)</h2>
+            <div class="process-model">
+                <p>The SDLC includes the following phases:</p>
+                <ol>
+                    <li>Requirements gathering and analysis</li>
+                    <li>Design</li>
+                    <li>Implementation</li>
+                    <li>Testing</li>
+                    <li>Deployment</li>
+                    <li>Maintenance</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="process-models">
+            <h2>Software Process Models</h2>
+            <p>A software process model is an abstraction of the actual process used to develop software. It defines activities, actions, tasks, milestones, and work products required to engineer high-quality software.</p>
+
+            <h3>Processes, Tasks and Frameworks</h3>
+            <div class="key-point">
+                <ul>
+                    <li><strong>Process:</strong> Collection of activities, actions, and tasks</li>
+                    <li><strong>Task:</strong> Well-defined objective producing tangible outcome</li>
+                    <li><strong>Framework:</strong> Establishes required activities while allowing flexibility</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="umbrella-activities">
+            <h2>Umbrella Activities</h2>
+            <div class="process-model">
+                <p>Supporting tasks occurring throughout the software process:</p>
+                <ul>
+                    <li>Project tracking and control</li>
+                    <li>Risk management</li>
+                    <li>Quality assurance</li>
+                    <li>Configuration management</li>
+                    <li>Technical reviews</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="process-layers">
+            <h2>Layers of the Software Engineering Process</h2>
+            <div class="process-model">
+                <ol>
+                    <li><strong>Process Layer:</strong> Establishes context and baseline practices</li>
+                    <li><strong>Methods Layer:</strong> Technical how-to's for each phase</li>
+                    <li><strong>Tools Layer:</strong> Automated support for process and methods</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="evolution">
+            <h2>Evolution of Software Process Models</h2>
+            <div class="evolution-timeline">
+                <h3>Historical Progression</h3>
+                <ul>
+                    <li><strong>Waterfall Model:</strong> Linear, sequential approach</li>
+                    <li><strong>Incremental/Iterative Models:</strong> Breaking development into cycles</li>
+                    <li><strong>Agile Models:</strong> Lightweight, collaborative approaches</li>
+                </ul>
+
+                <h3>Agile Practices</h3>
+                <ul>
+                    <li>Short iterations (sprints)</li>
+                    <li>Daily stand-ups</li>
+                    <li>Regular demos</li>
+                    <li>Continuous integration</li>
+                    <li>Retrospectives</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2024 Software Engineering Course</p>
+            <p>"Software engineering seeks to bring an engineering mindset of systematic problem solving to all aspects of software development."</p>
+        </footer>
+    </div>
+</body>
+</html>

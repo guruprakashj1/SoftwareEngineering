@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Software Engineering</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            background-color: var(--bg-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            margin-top: 30px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 15px;
+        }
+
+        h3 {
+            color: var(--primary-color);
+            margin-top: 25px;
+        }
+
+        .timeline {
+            background-color: #ebf5fb;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border-left: 2px solid var(--secondary-color);
+        }
+
+        .pioneer-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .pioneer-card h4 {
+            color: var(--accent-color);
+            margin-top: 0;
+        }
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .benefit-item {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .quote {
+            font-style: italic;
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 20px;
+            margin: 20px 0;
+            color: #555;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .benefits-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Introduction to Software Engineering</h1>
+            <p>From Early Days to Modern Agile Practices</p>
+        </header>
+
+        <section id="evolution">
+            <h2>Historical Evolution (1950s - Present)</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>The Early Days: Programming as Art (1950s-1960s)</h3>
+                    <ul>
+                        <li>Term "software engineering" coined in late 1960s</li>
+                        <li>Programs written by mathematicians and scientists</li>
+                        <li>No formal methodologies existed</li>
+                        <li>NATO Software Engineering Conference (1968) marked the birth of the discipline</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>The Software Crisis (1970s)</h3>
+                    <ul>
+                        <li>Growing complexity of software systems</li>
+                        <li>Projects frequently over budget and behind schedule</li>
+                        <li>High failure rates in large systems</li>
+                        <li>Recognition of need for structured approaches</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>The Maturation Period (1980s-1990s)</h3>
+                    <ul>
+                        <li>Development of structured programming methods</li>
+                        <li>Introduction of object-oriented programming</li>
+                        <li>Emergence of CASE tools</li>
+                        <li>Creation of formal software development processes</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>The Agile Revolution (2000s-Present)</h3>
+                    <ul>
+                        <li>Focus on iterative development and customer collaboration</li>
+                        <li>Emphasis on working software over documentation</li>
+                        <li>DevOps and continuous delivery practices</li>
+                        <li>Rapid adaptation to changing requirements</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="pioneers">
+            <h2>Pioneers Who Shaped Software Engineering</h2>
+            
+            <div class="pioneer-card">
+                <h4>Grady Booch</h4>
+                <ul>
+                    <li>Creator of the Booch method for object-oriented design</li>
+                    <li>Chief Scientist at Rational Software</li>
+                    <li>Key contributor to UML (Unified Modeling Language)</li>
+                </ul>
+            </div>
+
+            <div class="pioneer-card">
+                <h4>Ivar Jacobson</h4>
+                <ul>
+                    <li>Creator of use cases and the Objectory method</li>
+                    <li>One of the "Three Amigos" of UML</li>
+                    <li>Pioneer in component-based development</li>
+                </ul>
+            </div>
+
+            <div class="pioneer-card">
+                <h4>Martin Fowler</h4>
+                <ul>
+                    <li>Pioneer in agile methodologies</li>
+                    <li>Expert in code refactoring and design patterns</li>
+                    <li>Influential author on enterprise software design</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="importance">
+            <h2>Why Software Engineering Matters</h2>
+
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <h3>Industry Demands</h3>
+                    <ul>
+                        <li>Management of complex systems</li>
+                        <li>Quality assurance requirements</li>
+                        <li>Cost control and resource management</li>
+                    </ul>
+                </div>
+
+                <div class="benefit-item">
+                    <h3>Career Benefits</h3>
+                    <ul>
+                        <li>Path to technical leadership</li>
+                        <li>High-demand skills</li>
+                        <li>Professional growth opportunities</li>
+                    </ul>
+                </div>
+
+                <div class="benefit-item">
+                    <h3>Problem-Solving Skills</h3>
+                    <ul>
+                        <li>Systematic approach to challenges</li>
+                        <li>Design thinking capabilities</li>
+                        <li>Quality-focused mindset</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="process-models">
+            <h2>Software Process Models</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Traditional Models</h3>
+                    <ul>
+                        <li>Waterfall: Sequential development</li>
+                        <li>V-Model: Verification and validation focus</li>
+                        <li>Spiral: Risk-driven approach</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Modern Approaches</h3>
+                    <ul>
+                        <li>Agile Methods: Iterative and adaptive</li>
+                        <li>DevOps: Integration of development and operations</li>
+                        <li>Continuous Delivery: Automated deployment</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="quote">
+            "The most powerful tool we have as developers is automation."
+            - Martin Fowler
+        </div>
+
+        <section id="future">
+            <h2>The Future of Software Engineering</h2>
+            <ul>
+                <li>Increasing automation and AI integration</li>
+                <li>Focus on sustainable and maintainable systems</li>
+                <li>Emphasis on security and privacy</li>
+                <li>Evolution of agile practices</li>
+                <li>Integration of new technologies</li>
+            </ul>
+        </section>
+
+        <footer class="footer">
+            <p>© 2024 Software Engineering Course</p>
+            <p>"In theory, there is no difference between theory and practice. In practice, there is."</p>
+        </footer>
+    </div>
+</body>
+</html>
