@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Story Estimation Techniques</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        .technique-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .example {
+            background-color: #f5f5f5;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #28a745;
+            border-radius: 4px;
+        }
+        .tips {
+            background-color: #e8f4fc;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .comparison-table th {
+            background-color: #f4f4f4;
+        }
+        .warning {
+            background-color: #fff3cd;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>User Story Estimation Techniques</h1>
+        
+        <div class="technique-card">
+            <h2>1. Story Points</h2>
+            <p>Story points are a relative measure of effort, complexity, and uncertainty.</p>
+            
+            <h3>Common Fibonacci Sequence:</h3>
+            <div class="example">
+                <p>1, 2, 3, 5, 8, 13, 21</p>
+                <p><strong>Where:</strong></p>
+                <ul>
+                    <li>1 = Very simple task (few hours)</li>
+                    <li>3 = Simple task (1 day)</li>
+                    <li>5 = Medium complexity (2-3 days)</li>
+                    <li>8 = Complex task (3-5 days)</li>
+                    <li>13 = Very complex task (5-8 days)</li>
+                    <li>21 = Extremely complex (needs breaking down)</li>
+                </ul>
+            </div>
+
+            <div class="tips">
+                <h4>Tips for Story Point Estimation:</h4>
+                <ul>
+                    <li>Use relative sizing instead of time</li>
+                    <li>Compare new stories to previously estimated ones</li>
+                    <li>Consider all aspects: complexity, uncertainty, and effort</li>
+                    <li>If a story is larger than 13 points, consider breaking it down</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="technique-card">
+            <h2>2. Planning Poker</h2>
+            <p>A consensus-based estimation technique using cards.</p>
+
+            <div class="example">
+                <h3>Process:</h3>
+                <ol>
+                    <li>Product Owner presents the user story</li>
+                    <li>Team members ask questions for clarification</li>
+                    <li>Each member privately selects an estimation card</li>
+                    <li>Cards are revealed simultaneously</li>
+                    <li>Discuss differences and reach consensus</li>
+                </ol>
+            </div>
+
+            <div class="warning">
+                <h4>Common Pitfalls:</h4>
+                <ul>
+                    <li>Anchoring bias from senior team members</li>
+                    <li>Not discussing divergent estimates</li>
+                    <li>Rushing to consensus without proper discussion</li>
+                    <li>Not considering all factors (testing, documentation, etc.)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="technique-card">
+            <h2>3. T-Shirt Sizing</h2>
+            <p>A simple, intuitive estimation technique using familiar clothing sizes.</p>
+
+            <table class="comparison-table">
+                <tr>
+                    <th>Size</th>
+                    <th>Description</th>
+                    <th>Story Points Equivalent</th>
+                </tr>
+                <tr>
+                    <td>XS</td>
+                    <td>Very simple, few hours work</td>
+                    <td>1-2</td>
+                </tr>
+                <tr>
+                    <td>S</td>
+                    <td>Simple, about a day's work</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>M</td>
+                    <td>Medium complexity, 2-3 days</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>L</td>
+                    <td>Complex, about a week</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>XL</td>
+                    <td>Very complex, needs breaking down</td>
+                    <td>13+</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="technique-card">
+            <h2>4. Relative Mass Valuation (RMV)</h2>
+            <p>A technique where stories are physically arranged in order of size.</p>
+
+            <div class="example">
+                <h3>Steps:</h3>
+                <ol>
+                    <li>Write each story on a card</li>
+                    <li>Pick a story of medium size as baseline</li>
+                    <li>Place other stories relative to baseline</li>
+                    <li>Assign points based on position</li>
+                    <li>Review and adjust</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="technique-card">
+            <h2>5. Practical Estimation Exercise</h2>
+            
+            <div class="example">
+                <h3>Sample User Stories to Estimate:</h3>
+                
+                <div style="margin-bottom: 20px;">
+                    <p><strong>Story 1:</strong> As a user, I want to reset my password through email verification</p>
+                    <ul>
+                        <li>Frontend form creation</li>
+                        <li>Email service integration</li>
+                        <li>Security considerations</li>
+                        <li>Suggested estimate: 5 points</li>
+                    </ul>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <p><strong>Story 2:</strong> As a user, I want to view my profile picture</p>
+                    <ul>
+                        <li>Simple UI component</li>
+                        <li>Image loading</li>
+                        <li>Suggested estimate: 2 points</li>
+                    </ul>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <p><strong>Story 3:</strong> As an admin, I want to generate monthly user activity reports</p>
+                    <ul>
+                        <li>Data aggregation</li>
+                        <li>Report generation</li>
+                        <li>Export functionality</li>
+                        <li>Suggested estimate: 8 points</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="technique-card">
+            <h2>6. Best Practices for Estimation</h2>
+            
+            <div class="tips">
+                <h3>General Guidelines:</h3>
+                <ul>
+                    <li>Involve the whole team in estimation</li>
+                    <li>Use historical data when available</li>
+                    <li>Consider all aspects of implementation:
+                        <ul>
+                            <li>Development time</li>
+                            <li>Testing effort</li>
+                            <li>Documentation</li>
+                            <li>Integration work</li>
+                        </ul>
+                    </li>
+                    <li>Re-estimate when significant changes occur</li>
+                    <li>Track estimation accuracy to improve over time</li>
+                </ul>
+            </div>
+
+            <div class="warning">
+                <h3>When to Re-estimate:</h3>
+                <ul>
+                    <li>New information becomes available</li>
+                    <li>Requirements change significantly</li>
+                    <li>Technical challenges are discovered</li>
+                    <li>Dependencies change</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="technique-card">
+            <h2>7. Velocity Tracking</h2>
+            <p>Track team velocity to improve estimation accuracy over time.</p>
+
+            <div class="example">
+                <h3>Velocity Calculation:</h3>
+                <ol>
+                    <li>Sum completed story points per sprint</li>
+                    <li>Calculate average over last 3-5 sprints</li>
+                    <li>Use for future sprint planning</li>
+                </ol>
+
+                <table class="comparison-table">
+                    <tr>
+                        <th>Sprint</th>
+                        <th>Planned Points</th>
+                        <th>Completed Points</th>
+                    </tr>
+                    <tr>
+                        <td>Sprint 1</td>
+                        <td>20</td>
+                        <td>18</td>
+                    </tr>
+                    <tr>
+                        <td>Sprint 2</td>
+                        <td>18</td>
+                        <td>16</td>
+                    </tr>
+                    <tr>
+                        <td>Sprint 3</td>
+                        <td>16</td>
+                        <td>16</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Average Velocity</strong></td>
+                        <td></td>
+                        <td><strong>16.7</strong></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
