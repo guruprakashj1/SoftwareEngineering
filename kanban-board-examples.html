@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kanban Board Layout Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .board {
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .column {
+            display: inline-block;
+            vertical-align: top;
+            width: 200px;
+            margin: 0 10px;
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 3px;
+        }
+        .card {
+            background: white;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+        .wip-limit {
+            color: #666;
+            font-size: 12px;
+            font-style: italic;
+        }
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .example-description {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #0066cc;
+        }
+        .priority-high {
+            border-left: 4px solid #dc3545;
+        }
+        .priority-medium {
+            border-left: 4px solid #ffc107;
+        }
+        .priority-low {
+            border-left: 4px solid #28a745;
+        }
+        .blocked {
+            background: #ffebee;
+        }
+        .swimlane {
+            border-bottom: 2px dashed #ddd;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Kanban Board Layout Examples</h1>
+        <p>Common implementations for different scenarios and industries</p>
+    </div>
+
+    <h2>1. Basic Software Development Board</h2>
+    <div class="example-description">
+        <p>A simple board layout for software development teams. Includes standard workflow states and WIP limits.</p>
+    </div>
+    <div class="board">
+        <div class="column">
+            <h3>Backlog</h3>
+            <div class="card priority-high">Feature: User Auth</div>
+            <div class="card priority-medium">Bug Fix: Login Page</div>
+            <div class="card priority-low">Documentation Update</div>
+        </div>
+        <div class="column">
+            <h3>Development <span class="wip-limit">(WIP: 3)</span></h3>
+            <div class="card">API Integration</div>
+            <div class="card blocked">Database Migration</div>
+        </div>
+        <div class="column">
+            <h3>Code Review <span class="wip-limit">(WIP: 2)</span></h3>
+            <div class="card">Payment Gateway</div>
+        </div>
+        <div class="column">
+            <h3>Testing</h3>
+            <div class="card">User Profile</div>
+        </div>
+        <div class="column">
+            <h3>Done</h3>
+            <div class="card">Homepage Redesign</div>
+        </div>
+    </div>
+
+    <h2>2. Project Management Board with Swimlanes</h2>
+    <div class="example-description">
+        <p>Project management board using swimlanes to separate different types of work or teams.</p>
+    </div>
+    <div class="board">
+        <div class="swimlane">
+            <h3>Team A</h3>
+            <div class="column">
+                <h3>To Do</h3>
+                <div class="card">Market Research</div>
+            </div>
+            <div class="column">
+                <h3>In Progress</h3>
+                <div class="card">Client Meeting</div>
+            </div>
+            <div class="column">
+                <h3>Complete</h3>
+                <div class="card">Budget Review</div>
+            </div>
+        </div>
+        <div class="swimlane">
+            <h3>Team B</h3>
+            <div class="column">
+                <h3>To Do</h3>
+                <div class="card">Design Sprint</div>
+            </div>
+            <div class="column">
+                <h3>In Progress</h3>
+                <div class="card">UX Research</div>
+            </div>
+            <div class="column">
+                <h3>Complete</h3>
+                <div class="card">Wireframes</div>
+            </div>
+        </div>
+    </div>
+
+    <h2>3. Support Team Board</h2>
+    <div class="example-description">
+        <p>Customer support board with priority levels and SLA tracking.</p>
+    </div>
+    <div class="board">
+        <div class="column">
+            <h3>New Tickets</h3>
+            <div class="card priority-high">Server Down</div>
+            <div class="card priority-medium">Login Issue</div>
+            <div class="card priority-low">Feature Request</div>
+        </div>
+        <div class="column">
+            <h3>Investigating</h3>
+            <div class="card blocked">Network Issue</div>
+            <div class="card">Password Reset</div>
+        </div>
+        <div class="column">
+            <h3>In Progress</h3>
+            <div class="card">Database Error</div>
+        </div>
+        <div class="column">
+            <h3>Resolved</h3>
+            <div class="card">Email Config</div>
+        </div>
+        <div class="column">
+            <h3>Closed</h3>
+            <div class="card">API Access</div>
+        </div>
+    </div>
+
+    <h2>4. Advanced Development Board</h2>
+    <div class="example-description">
+        <p>Complex development board with additional states and testing phases.</p>
+    </div>
+    <div class="board">
+        <div class="column">
+            <h3>Product Backlog</h3>
+            <div class="card priority-high">Security Update</div>
+            <div class="card priority-medium">Performance Opt.</div>
+        </div>
+        <div class="column">
+            <h3>Sprint Backlog</h3>
+            <div class="card">Mobile Layout</div>
+            <div class="card">Search Function</div>
+        </div>
+        <div class="column">
+            <h3>Development</h3>
+            <div class="card blocked">Payment API</div>
+        </div>
+        <div class="column">
+            <h3>Code Review</h3>
+            <div class="card">User Auth</div>
+        </div>
+        <div class="column">
+            <h3>QA Testing</h3>
+            <div class="card">Cart Feature</div>
+        </div>
+        <div class="column">
+            <h3>UAT</h3>
+            <div class="card">Admin Panel</div>
+        </div>
+        <div class="column">
+            <h3>Ready to Deploy</h3>
+            <div class="card">Newsletter</div>
+        </div>
+        <div class="column">
+            <h3>Deployed</h3>
+            <div class="card">Login Page</div>
+        </div>
+    </div>
+
+    <h2>5. Operations Board</h2>
+    <div class="example-description">
+        <p>Operations and maintenance board with different work types.</p>
+    </div>
+    <div class="board">
+        <div class="swimlane">
+            <h3>Maintenance</h3>
+            <div class="column">
+                <h3>Scheduled</h3>
+                <div class="card">Server Updates</div>
+            </div>
+            <div class="column">
+                <h3>In Progress</h3>
+                <div class="card">Backup Check</div>
+            </div>
+            <div class="column">
+                <h3>Completed</h3>
+                <div class="card">Security Scan</div>
+            </div>
+        </div>
+        <div class="swimlane">
+            <h3>Incidents</h3>
+            <div class="column">
+                <h3>New</h3>
+                <div class="card priority-high">Service Outage</div>
+            </div>
+            <div class="column">
+                <h3>Working</h3>
+                <div class="card">DNS Issue</div>
+            </div>
+            <div class="column">
+                <h3>Resolved</h3>
+                <div class="card">Cache Clear</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 30px;">
+        <h2>Implementation Tips</h2>
+        <ul>
+            <li>Start simple and evolve the board based on team needs</li>
+            <li>Keep WIP limits visible and enforced</li>
+            <li>Use colors consistently for priority levels</li>
+            <li>Include clear policies for moving cards</li>
+            <li>Make blocked items highly visible</li>
+            <li>Review and adjust swimlanes as needed</li>
+            <li>Consider adding cycle time indicators</li>
+        </ul>
+    </div>
+</body>
+</html>
