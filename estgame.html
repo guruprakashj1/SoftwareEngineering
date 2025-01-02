@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Point Estimation Simulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        .technique {
+            margin-bottom: 30px;
+        }
+        .technique h2 {
+            margin-bottom: 10px;
+        }
+        .story {
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .options {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .option {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #007BFF;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 5px;
+            border: 2px solid #ddd;
+            cursor: pointer;
+            user-select: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s, transform 0.2s;
+        }
+        .option:hover {
+            background: #0056b3;
+            transform: scale(1.1);
+        }
+        .feedback {
+            margin-top: 10px;
+            padding: 10px;
+            background: #e7f9e7;
+            border: 1px solid #4CAF50;
+            color: #4CAF50;
+            display: none;
+        }
+        .team-member {
+            padding: 5px 10px;
+            margin-right: 10px;
+            border-radius: 5px;
+            color: #fff;
+            display: inline-block;
+            font-weight: bold;
+        }
+        .reset-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #FF5733;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .reset-button:hover {
+            background-color: #e84118;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Story Point Estimation Game</h1>
+    </header>
+    <div class="container">
+        <!-- Techniques Container -->
+        <div id="techniques-container"></div>
+
+        <!-- Reset Button -->
+        <button class="reset-button" onclick="resetGame()">Reset Game</button>
+    </div>
+    <script>
+        const techniques = [
+            {
+                id: "planning-poker",
+                name: "Planning Poker",
+                story: "As a user, I want to reset my password so I can regain access to my account.",
+                options: [1, 2, 3, 5, 8, 13]
+            },
+            {
+                id: "fibonacci-sequence",
+                name: "Fibonacci Sequence",
+                story: "As an admin, I want to generate monthly reports so I can analyze performance trends.",
+                options: [1, 2, 3, 5, 8, 13, 21]
+            },
+            {
+                id: "tshirt-sizing",
+                name: "T-Shirt Sizing",
+                story: "As a customer, I want to receive email notifications for order updates so I can stay informed.",
+                options: ["S", "M", "L", "XL"]
+            },
+            {
+                id: "bucket-system",
+                name: "Bucket System",
+                story: "As a developer, I want to refactor the codebase to improve maintainability.",
+                options: ["Small", "Medium", "Large"]
+            }
+        ];
+
+        const colors = ["#FF5733", "#33FF57", "#3357FF", "#FF33A1", "#F3FF33"];
+
+        function createTechnique(technique) {
+            const container = document.createElement("div");
+            container.classList.add("technique");
+            container.id = technique.id;
+
+            container.innerHTML = `
+                <h2>${technique.name}</h2>
+                <div class="story">
+                    <p><strong>User Story:</strong> ${technique.story}</p>
+                </div>
+                <div class="options">
+                    ${technique.options.map(option => `<div class="option" data-value="${option}">${option}</div>`).join("")}
+                </div>
+                <div id="team-${technique.id}"></div>
+                <div class="feedback" id="feedback-${technique.id}"></div>
+            `;
+
+            document.getElementById("techniques-container").appendChild(container);
+
+            setupTechnique(technique);
+        }
+
+        function setupTechnique(technique) {
+            const options = document.querySelectorAll(`#${technique.id} .option`);
+            let currentMemberIndex = 0;
+            const teamSelections = {};
+
+            options.forEach(option => {
+                option.addEventListener("click", () => {
+                    const value = option.dataset.value;
+                    option.style.background = colors[currentMemberIndex];
+                    option.style.color = "#fff";
+                    teamSelections[currentMemberIndex] = value;
+
+                    currentMemberIndex = (currentMemberIndex + 1) % 5;
+
+                    if (Object.keys(teamSelections).length === 5) {
+                        const finalPoint = calculateFinalPoint(Object.values(teamSelections));
+                        displayFeedback(technique.id, finalPoint);
+                    }
+                });
+            });
+
+            createTeamLegend(technique.id);
+        }
+
+        function createTeamLegend(techniqueId) {
+            const teamContainer = document.getElementById(`team-${techniqueId}`);
+            for (let i = 0; i < 5; i++) {
+                const member = document.createElement("span");
+                member.classList.add("team-member");
+                member.style.background = colors[i];
+                member.textContent = `Member ${i + 1}`;
+                teamContainer.appendChild(member);
+            }
+        }
+
+        function calculateFinalPoint(points) {
+            const pointCounts = points.reduce((acc, point) => {
+                acc[point] = (acc[point] || 0) + 1;
+                return acc;
+            }, {});
+            return Object.keys(pointCounts).reduce((a, b) => pointCounts[a] > pointCounts[b] ? a : b);
+        }
+
+        function displayFeedback(techniqueId, point) {
+            const feedback = document.getElementById(`feedback-${techniqueId}`);
+            feedback.textContent = `The final story point is: ${point}`;
+            feedback.style.display = "block";
+        }
+
+        function resetGame() {
+            document.getElementById("techniques-container").innerHTML = "";
+            techniques.forEach(createTechnique);
+        }
+
+        techniques.forEach(createTechnique);
+    </script>
+</body>
+</html>

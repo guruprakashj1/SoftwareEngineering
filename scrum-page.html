@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrum Lifecycle Guide</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .content-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: #2d3748;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        ul.key-points {
+            list-style: none;
+            padding-left: 1.5rem;
+            margin-top: 1rem;
+        }
+        ul.key-points li {
+            position: relative;
+            padding: 0.5rem 0;
+            line-height: 1.5;
+        }
+        ul.key-points li:before {
+            content: "•";
+            color: #4299e1;
+            font-weight: bold;
+            position: absolute;
+            left: -1.5rem;
+        }
+        p {
+            line-height: 1.6;
+            color: #4a5568;
+            margin-bottom: 1rem;
+        }
+        .tooltip {
+            position: fixed;
+            background: white;
+            padding: 8px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            max-width: 300px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="content-section">
+        <div id="diagram" class="section">
+            <!-- React component will be mounted here -->
+             
+        </div>
+
+        <!-- Detailed Explanations -->
+        <div class="section">
+            <h2>Product Backlog</h2>
+            <p>The Product Backlog is the single source of truth for what needs to be built in the product. It's a dynamic, ordered list of everything that might be needed in the product and is the single source of requirements for any changes to be made.</p>
+            <ul class="key-points">
+                <li>Maintained and prioritized by the Product Owner</li>
+                <li>Contains features, requirements, enhancements, and fixes</li>
+                <li>Items are ordered by value, risk, priority, and necessity</li>
+                <li>Never complete - evolves as the product and environment evolve</li>
+                <li>Details, estimates, and order are refined continuously</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Sprint Planning</h2>
+            <p>Sprint Planning initiates the Sprint by laying out the work to be performed. This is created by the collaborative work of the entire Scrum Team.</p>
+            <ul class="key-points">
+                <li>Time-boxed to a maximum of eight hours for a one-month Sprint</li>
+                <li>Addresses two critical questions: What can be delivered? How will the work be achieved?</li>
+                <li>Results in clear Sprint Goal and Sprint Backlog</li>
+                <li>Team determines capacity and velocity for the upcoming Sprint</li>
+                <li>Development Team forecasts functionality to be developed</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Sprint Backlog</h2>
+            <p>The Sprint Backlog is the set of Product Backlog items selected for the Sprint, plus a plan for delivering them. It makes visible all of the work that the Development Team identifies as necessary to meet the Sprint Goal.</p>
+            <ul class="key-points">
+                <li>Includes detailed plan for delivering increment</li>
+                <li>Updated throughout the Sprint as more is learned</li>
+                <li>Only the Development Team can change it during a Sprint</li>
+                <li>Includes at least one high-priority process improvement</li>
+                <li>Tracked daily to project the likelihood of achieving Sprint Goal</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Sprint</h2>
+            <p>The Sprint is the heart of Scrum, a time-box of one month or less during which a "Done", useable, and potentially releasable product Increment is created.</p>
+            <ul class="key-points">
+                <li>Fixed length (usually 2-4 weeks)</li>
+                <li>New Sprint starts immediately after the conclusion of the previous Sprint</li>
+                <li>Contains all development work, plus Sprint Planning, Daily Scrums, Sprint Review, and Retrospective</li>
+                <li>No changes are made that would endanger the Sprint Goal</li>
+                <li>Scope may be clarified and re-negotiated between the Product Owner and Development Team as more is learned</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Daily Scrum</h2>
+            <p>The Daily Scrum is a 15-minute time-boxed event for the Development Team to synchronize activities and create a plan for the next 24 hours.</p>
+            <ul class="key-points">
+                <li>Held at the same time and place each day</li>
+                <li>Team members explain what they did yesterday, will do today, and any impediments</li>
+                <li>Optimizes team collaboration and performance</li>
+                <li>Identifies and removes obstacles to progress</li>
+                <li>Promotes quick decision-making and improves team's level of knowledge</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Sprint Review</h2>
+            <p>The Sprint Review is held at the end of the Sprint to inspect the Increment and adapt the Product Backlog if needed. The Scrum Team and stakeholders collaborate about what was done in the Sprint.</p>
+            <ul class="key-points">
+                <li>Four-hour time limit for one-month Sprints</li>
+                <li>Demonstrates completed work to stakeholders</li>
+                <li>Product Owner explains what has and hasn't been done</li>
+                <li>Team discusses what went well and problems encountered</li>
+                <li>Group collaborates on what to do next to optimize value</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Sprint Retrospective</h2>
+            <p>The Sprint Retrospective is an opportunity for the Scrum Team to inspect itself and create a plan for improvements to be enacted during the next Sprint.</p>
+            <ul class="key-points">
+                <li>Three-hour time limit for one-month Sprints</li>
+                <li>Inspects how the last Sprint went regarding people, relationships, process, and tools</li>
+                <li>Identifies and orders major items that went well</li>
+                <li>Creates plan for implementing improvements</li>
+                <li>Adapts the definition of "Done" as needed</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Increment</h2>
+            <p>The Increment is the sum of all the Product Backlog items completed during a Sprint and all previous Sprints. At the end of a Sprint, the new Increment must be "Done".</p>
+            <ul class="key-points">
+                <li>Must be in useable condition regardless of whether the Product Owner decides to release it</li>
+                <li>Contains all previously delivered increments</li>
+                <li>Must meet the Scrum Team's definition of "Done"</li>
+                <li>Represents a step toward a vision or goal</li>
+                <li>Must be usable regardless of whether the Product Owner decides to actually release it</li>
+            </ul>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        const ScrumLifecycle = () => {
+            const [tooltip, setTooltip] = React.useState({ visible: false, text: '', x: 0, y: 0 });
+
+            const explanations = {
+                productBacklog: "A prioritized list of all desired features, changes, and fixes for the product. Managed by the Product Owner.",
+                sprintPlanning: "A meeting where the team selects items from the Product Backlog to work on during the upcoming Sprint and creates detailed plans.",
+                sprintBacklog: "The set of Product Backlog items selected for the Sprint, plus the plan for delivering them.",
+                sprint: "A time-boxed period (usually 2-4 weeks) during which the team works to complete the Sprint Backlog items.",
+                dailyScrum: "A 15-minute daily meeting where team members discuss progress and obstacles.",
+                sprintReview: "A meeting at the end of the Sprint where the team demonstrates completed work to stakeholders.",
+                sprintRetrospective: "A meeting where the team reflects on the Sprint and identifies improvements for the next one.",
+                increment: "The sum of all Product Backlog items completed during a Sprint, integrated with all previous Sprints' work."
+            };
+
+            const handleMouseOver = (event, text) => {
+                setTooltip({
+                    visible: true,
+                    text,
+                    x: event.clientX,
+                    y: event.clientY
+                });
+            };
+
+            const handleMouseOut = () => {
+                setTooltip({ visible: false, text: '', x: 0, y: 0 });
+            };
+
+            return React.createElement('div', { className: 'w-full max-w-4xl mx-auto' },
+                React.createElement('svg', { 
+                    viewBox: '0 0 1000 500', 
+                    className: 'w-full',
+                    style: { backgroundColor: 'white' }
+                },
+                    // Define arrow marker
+                    React.createElement('defs', null,
+                        React.createElement('marker', {
+                            id: 'arrow',
+                            viewBox: '0 0 10 10',
+                            refX: '10',
+                            refY: '5',
+                            markerWidth: '6',
+                            markerHeight: '6',
+                            orient: 'auto-start-reverse'
+                        },
+                        React.createElement('path', {
+                            d: 'M 0 0 L 10 5 L 0 10',
+                            style: { fill: 'none', stroke: '#666666', strokeWidth: '1.5' }
+                        })
+                        )
+                    ),
+
+                    // Product Backlog
+                    React.createElement('g', { transform: 'translate(100, 100)' },
+                        React.createElement('rect', {
+                            width: 150,
+                            height: 80,
+                            style: { fill: '#e6f3ff', stroke: '#4299e1', strokeWidth: 2 },
+                            className: 'cursor-help',
+                            onMouseOver: (e) => handleMouseOver(e, explanations.productBacklog),
+                            onMouseOut: handleMouseOut
+                        }),
+                        React.createElement('text', {
+                            x: 75,
+                            y: 45,
+                            textAnchor: 'middle',
+                            className: 'text-sm font-medium'
+                        }, 'Product Backlog')
+                    ),
+
+                    // Sprint Planning
+                    React.createElement('g', { transform: 'translate(350, 100)' },
+                        React.createElement('rect', {
+                            width: 150,
+                            height: 80,
+                            style: { fill: '#e6ffe6', stroke: '#48bb78', strokeWidth: 2 },
+                            className: 'cursor-help',
+                            onMouseOver: (e) => handleMouseOver(e, explanations.sprintPlanning),
+                            onMouseOut: handleMouseOut
+                        }),
+                        React.createElement('text', {
+                            x: 75,
+                            y: 45,
+                            textAnchor: 'middle',
+                            className: 'text-sm font-medium'
+                        }, 'Sprint Planning')
+                    ),
+
+                    // Sprint Backlog
+                    React.createElement('g', { transform: 'translate(600, 100)' },
+                        React.createElement('rect', {
+                            width: 150,
+                            height: 80,
+                            style: { fill: '#fff7e6', stroke: '#eab308', strokeWidth: 2 },
+                            className: 'cursor-help',
+                            onMouseOver: (e) => handleMouseOver(e, explanations.sprintBacklog),
+                            onMouseOut: handleMouseOut
+                        }),
+                        React.createElement('text', {
+                            x: 75,
+                            y: 45,
+                            textAnchor: 'middle',
+                            className: 'text-sm font-medium'
+                        }, 'Sprint Backlog')
+                    ),
+
+                    // Sprint
+                    React.createElement('g', { transform: 'translate(850, 100)' },
+                        React.createElement('rect', {
+                            width: 150,
+                            height: 80,
+                            style: { fill: '#f3e6ff', stroke: '#9333ea', strokeWidth: 2 },
+                            className: 'cursor-help',
+                            onMouseOver: (e) => handleMouseOver(e, explanations.sprint),
+                            onMouseOut: handleMouseOut
+                        }),
+                        React.createElement('text', {
+                            x: 75,
+                            y: 45,
+                            textAnchor: 'middle',
+                            className: 'text-sm font-medium'
+                        }, 'Sprint')
+                    ),
+
+                    // Daily Scrum
+                    React.createElement('g', { transform: 'translate(850, 300)' },
+                        React.createElement('rect', {
+                            width: 150,
+                            height: 80,
+                            style: { fill: '#ffe6e6', stroke: '#e53e3e', strokeWidth: 2 },
+                            className: 'cursor-help',
+                            onMouseOver: (e) => handleMouseOver(e, explanations.dailyScrum),
+                            onMouseOut: handleMouseOut
+                        }),
+                        React.createElement('text', {
+                            x: 75,
+                            y: 45,
+                            textAnchor: 'middle',
+                            className: 'text-sm font-medium'
+                        }, 'Daily Scrum')
+                    ),
+
+                    // Sprint Review
+                    React.createElement('g', { transform: 'translate(600, 300)' },
+                        React.createElement('rect', {
+                            width: 150,
+                            height: 80,
+                            style: { fill: '#fff0e6', stroke: '#ed8936', strokeWidth: 2 },
+                            className: 'cursor-help',
+                            onMouseOver: (e) => handleMouseOver(e, explanations.sprintReview),
+                            onMouseOut: handleMouseOut
+                        }),
+                        React.createElement('text', {
+                            x: 75,
+                            y: 45,
+                            textAnchor: 'middle',
+                            className: 'text-sm font-medium'
+                        }, 'Sprint Review')
+                    ),
+
+                    // Sprint Retrospective
+                    React.createElement('g', { transform: 'translate(350, 300)' },
+                        React.createElement('rect', {
+                            width: 150,
+                            height: 80,
+                            style: { fill: '#ffe6f0', stroke: '#d53f8c', strokeWidth: 2 },
+                            className: 'cursor-help',
+                            onMouseOver: (e) => handleMouseOver(e, explanations.sprintRetrospective),
+                            onMouseOut: handleMouseOut
+                        }),
+                        React.createElement('text', {
+                            x: 75,
+                            y: 45,
+                            textAnchor: 'middle',
+                            className: 'text-sm font-medium'
+                        }, 'Sprint Retrospective')
+                    ),
+
+                    // Increment
+                    React.createElement('g', { transform: 'translate(100, 300)' },
+                        React.createElement('rect', {
+                            width: 150,
+                            height: 80,
+                            style: { fill: '#e6e6ff', stroke: '#667eea', strokeWidth: 2 },
+                            className: 'cursor-help',
+                            onMouseOver: (e) => handleMouseOver(e, explanations.increment),
+                            onMouseOut: handleMouseOut
+                        }),
+                        React.createElement('text', {
+                            x: 75,
+                            y: 45,
+                            textAnchor: 'middle',
+                            className: 'text-sm font-medium'
+                        }, 'Increment')
+                    ),
+
+                    // Arrows
+                    // Horizontal arrows in top row
+                    React.createElement('line', {
+                        x1: 250, y1: 140,
+                        x2: 350, y2: 140,
+                        style: { stroke: '#666666', strokeWidth: 1.5 },
+                        markerEnd: 'url(#arrow)'
+                    }),
+                    React.createElement('line', {
+                        x1: 500, y1: 140,
+                        x2: 600, y2: 140,
+                        style: { stroke: '#666666', strokeWidth: 1.5 },
+                        markerEnd: 'url(#arrow)'
+                    }),
+                    React.createElement('line', {
+                        x1: 750, y1: 140,
+                        x2: 850, y2: 140,
+                        style: { stroke: '#666666', strokeWidth: 1.5 },
+                        markerEnd: 'url(#arrow)'
+                    }),
+
+                    // Vertical arrow from Sprint to Daily Scrum
+                    React.createElement('line', {
+                        x1: 925, y1: 180,
+                        x2: 925, y2: 300,
+                        style: { stroke: '#666666', strokeWidth: 1.5 },
+                        markerEnd: 'url(#arrow)'
+                    }),
+
+                    // Horizontal arrows in bottom row
+                    React.createElement('line', {
+                        x1: 850, y1: 340,
+                        x2: 750, y2: 340,
+                        style: { stroke: '#666666', strokeWidth: 1.5 },
+                        markerEnd: 'url(#arrow)'
+                    }),
+                    React.createElement('line', {
+                        x1: 600, y1: 340,
+                        x2: 500, y2: 340,
+                        style: { stroke: '#666666', strokeWidth: 1.5 },
+                        markerEnd: 'url(#arrow)'
+                    }),
+                    React.createElement('line', {
+                        x1: 350, y1: 340,
+                        x2: 250, y2: 340,
+                        style: { stroke: '#666666', strokeWidth: 1.5 },
+                        markerEnd: 'url(#arrow)'
+                    }),
+
+                    // Vertical arrow from Increment to Product Backlog
+                    React.createElement('line', {
+                        x1: 175, y1: 300,
+                        x2: 175, y2: 180,
+                        style: { stroke: '#666666', strokeWidth: 1.5 },
+                        markerEnd: 'url(#arrow)'
+                    })
+                ),
+                tooltip.visible && React.createElement('div', {
+                    className: 'tooltip',
+                    style: {
+                        left: tooltip.x + 10,
+                        top: tooltip.y + 10
+                    }
+                }, tooltip.text)
+            );
+        };
+
+        // Mount the React component
+        const root = ReactDOM.createRoot(document.getElementById('diagram'));
+        root.render(React.createElement(ScrumLifecycle));
+    </script>
+</body>
+</html>
